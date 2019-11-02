@@ -1,0 +1,17 @@
+button {
+    height: 5em;
+    width: 10em;
+    display: block;
+    margin: 1.5em auto;
+    /* font-size: 40px; */
+}
+
+.grid {
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#orders {
+    margin: 0 auto;
+}
