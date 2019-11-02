@@ -28,8 +28,14 @@ export class QueueComponent implements OnInit, OnDestroy {
     })
   }
 
+  dequeue(){
+    this.items.shift();
+    console.log(this.items);
+  }
+
   ngOnDestroy() {
     this.itemsObs$.unsubscribe();
   }
+
 
 }
