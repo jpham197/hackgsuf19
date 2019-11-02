@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { QueueComponent } from './kitchen/queue/queue.component';
 import { OrderComponent } from './kitchen/order/order.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { OrdersService } from './services/orders.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
