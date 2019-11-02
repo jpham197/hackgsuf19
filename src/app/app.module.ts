@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QueueComponent } from './queue/queue.component';
-import { OrderComponent } from './order/order.component';
+import { QueueComponent } from './kitchen/queue/queue.component';
+import { OrderComponent } from './kitchen/order/order.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
