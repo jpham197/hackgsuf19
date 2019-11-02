@@ -18,12 +18,13 @@ export class QueueComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.call();
+    this.orders.getTransactions();
   }
 
   call(): void {
     this.itemsObs$ = this.orders.getItems().subscribe((result) => {
       this.items = result;
-      console.log(this.items);
+      // console.log(this.items);
     })
   }
 
