@@ -2,6 +2,6 @@ div {
     border: solid black 2px;
     margin-top: 1px;
     width: 12em;
-    padding: 1em;
+    padding: 2em;
     display: flex;
 }
