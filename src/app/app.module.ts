@@ -6,12 +6,17 @@ import { AppComponent } from './app.component';
 import { QueueComponent } from './kitchen/queue/queue.component';
 import { OrderComponent } from './kitchen/order/order.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CustomerComponent } from './customer/customer.component';
+import { StatusComponent } from './customer/status/status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QueueComponent,
-    OrderComponent
+    OrderComponent,
+    CustomerComponent,
+    StatusComponent,
+    
   ],
   imports: [
     BrowserModule,
