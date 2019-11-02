@@ -8,8 +8,6 @@ import { Item } from "../../classes/item";
 })
 export class OrderComponent implements OnInit {
 
-  number = 0;
-
   @Input() item: Item;
 
   constructor() { }

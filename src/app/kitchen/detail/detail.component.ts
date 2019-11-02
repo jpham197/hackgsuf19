@@ -9,8 +9,6 @@ import { Index } from "../../classes/index";
 })
 
 export class DetailComponent implements OnInit {
-
-
   
   constructor() { }
 

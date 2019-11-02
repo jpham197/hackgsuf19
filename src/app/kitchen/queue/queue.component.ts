@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject } from "rxjs";
 import { OrdersService } from 'src/app/services/orders.service';
@@ -22,6 +22,14 @@ export class QueueComponent implements OnInit, OnDestroy {
     this.orders.getTransactions();
   }
 
+  @HostListener('document:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    console.log(event.key);
+    if (event.key == "Enter") {
+      this.dequeue();
+    }
+  }
+
   call(): void {
     this.itemsObs$ = this.orders.getItems().subscribe((result) => {
       this.items = result;
@@ -29,7 +37,7 @@ export class QueueComponent implements OnInit, OnDestroy {
     })
   }
 
-  dequeue(){
+  dequeue(): void {
     this.items.shift();
     console.log(this.items);
   }
