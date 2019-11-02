@@ -10,6 +10,7 @@ import { OrdersService } from './services/orders.service';
 import { CustomerComponent } from './customer/customer.component';
 import { StatusComponent } from './customer/status/status.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { KitchenComponent } from './kitchen/kitchen.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClient, OrdersService],
   bootstrap: [AppComponent]

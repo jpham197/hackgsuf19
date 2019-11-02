@@ -36,9 +36,9 @@ export class OrdersService {
 
   //Get transaction ID
   getTransactions() {
-    return this.http.post(config.transactionUrl, config.transactionBody, this.header)
-    .subscribe((data) => {
-      console.log(data);
-    });
+    // return this.http.post(config.transactionUrl, config.transactionBody, this.header)
+    // .subscribe((data) => {
+    //   console.log(data);
+    // });
   }
 }
