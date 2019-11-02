@@ -3,5 +3,5 @@ div {
     margin-top: 1px;
     width: 12em;
     padding: 2em;
-    display: flex;
+    /* display: flex; */
 }

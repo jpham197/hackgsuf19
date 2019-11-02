@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject } from "rxjs";
 import { OrdersService } from 'src/app/services/orders.service';
+import { MatButtonModule } from "@angular/material";
 
 @Component({
   selector: 'app-queue',

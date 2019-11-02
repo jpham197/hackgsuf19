@@ -1,7 +1,11 @@
 <body>
-    <div class="example-button-row">
-        <button mat-raised-button (click)="dequeue()">Next Order</button>
-        
-            </div>
-    <app-order *ngFor="let item of items" [item]="item"></app-order>
+    <div class="grid">
+        <div id="orders">
+            <button mat-button (click)="dequeue()">Next Order</button>    
+            <app-order *ngFor="let item of items" [item]="item"></app-order>
+        </div>
+        <div><app-detail *ngFor="let item of items; let i = index"
+                        [item]="item"
+                        [index]="i"></app-detail></div>
+    </div>
 </body>
