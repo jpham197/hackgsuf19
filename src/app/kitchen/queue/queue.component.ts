@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject } from "rxjs";
 import { OrdersService } from 'src/app/services/orders.service';
+import { MatButtonModule } from "@angular/material";
 
 @Component({
   selector: 'app-queue',
@@ -28,8 +29,14 @@ export class QueueComponent implements OnInit, OnDestroy {
     })
   }
 
+  dequeue(){
+    this.items.shift();
+    console.log(this.items);
+  }
+
   ngOnDestroy() {
     this.itemsObs$.unsubscribe();
   }
+
 
 }
