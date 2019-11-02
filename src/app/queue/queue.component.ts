@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject } from "rxjs";
+
 @Component({
   selector: 'app-queue',
   templateUrl: './queue.component.html',
@@ -7,17 +9,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class QueueComponent implements OnInit {
 
-  items = [
-    {
-      "number": "1"
-    },
-    {
-      "number": "2"
-    },
-    {
-      "number": "3"
-    }
-  ];
+  // items: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +20,8 @@ export class QueueComponent implements OnInit {
   call(): void {
     this.http.get(`http://5dbd051e30411e0014f27227.mockapi.io/getItems`)
       .subscribe((data) => {
-        console.log(data);
+        // console.log(typeof(data));
+        // this.items.next(data);
       });
   }
 
