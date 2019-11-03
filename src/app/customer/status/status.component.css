@@ -19,7 +19,7 @@
 	font-size: 0;
 	display: inline-block;
 	margin: auto;
-	padding: 80px;
+	padding: 110px;
 	zoom: 1;
 	vertical-align: top; 
 	font-size: 25px;
@@ -27,10 +27,16 @@
 #first {
 	background: url(/assets/300px_first_stage.gif) no-repeat;
 	background-size: cover;
+	animation: giffy 0.5s infinite steps(1);
+    animation-play-state: paused;
+}
+#first:hover {
+	animation-play-state: paused;
 }
 #second {
 	background: url(/assets/300px_second_stage.gif) no-repeat;
-	background-size: cover;
+	background-position: center top;
+	/* background-size: cover; */
 }
 #third {
 	background: url(/assets/300px_third_stage.gif) no-repeat;
