@@ -8,4 +8,6 @@ div {
 
 p {
     text-align: center;
+    padding: 1em;
+    /* display: flex;  */
 }

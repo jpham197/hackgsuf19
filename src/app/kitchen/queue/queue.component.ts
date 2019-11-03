@@ -93,6 +93,14 @@ export class QueueComponent implements OnInit, OnDestroy {
       this.items = result;
     });
   }
+  count = 0;
+  incount(): void{
+    this.count += 1;
+    if (this.count == 4) {
+      this.dequeue();
+      this.count = 0;
+    }
+  }
 
   dequeue(): void {
     this.items.shift();
