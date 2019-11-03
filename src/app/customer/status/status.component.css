@@ -1,12 +1,30 @@
 :host {
 	display: block;
-  }
-  
-  .on-off-container {
+}
+.on-off-container {
 	border: 1px solid #dddddd;
 	margin-top: 1em;
 	padding: 60px 60px 60px 60px;
 	color: #000000;
 	font-weight: bold;
 	font-size: 20px;
-  }
+}
+
+#on-off-container > div {
+	display: inline-block;
+}
+.on-off-container {
+	height: 500px; 
+	width: 500px; 
+	font-size: 0;
+	display: inline-block;
+	margin: auto;
+	padding: 80px;
+	zoom: 1;
+	vertical-align: top; 
+	font-size: 25px;
+}
+#first {
+	background: url(/assets/300px_first_stage.gif) no-repeat;
+	background-size: cover;
+}

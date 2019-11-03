@@ -16,11 +16,13 @@ import {
       // ...
       state('on', style({
         height: '200px',
+        width: '200px',
         opacity: 1,
         backgroundColor: 'white'
       })),
       state('off', style({
         height: '100px',
+        width: '100px',
         opacity: 0.5,
         backgroundColor: 'gray'
       })),
@@ -49,7 +51,7 @@ export class StatusComponent implements OnInit {
 
 
   toggle() {
-    if  (this.index > 5) {
+    if  (this.index > 3) {
       this.index = 0;
     }
     this.arr = [false, false, false];
