@@ -5,6 +5,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 import { MatButtonModule } from "@angular/material";
 import { element } from '@angular/core/src/render3';
 import { config } from '../../services/config'
+import { DataService } from '../../services/data.service'
 
 @Component({
   selector: 'app-queue',
@@ -14,7 +15,8 @@ import { config } from '../../services/config'
 
 export class QueueComponent implements OnInit, OnDestroy {
 
-  constructor(private os: OrdersService) { }
+  constructor(private os: OrdersService,
+              private data: DataService) { }
 
   itemsObs$;
   items: any = [
@@ -24,8 +26,10 @@ export class QueueComponent implements OnInit, OnDestroy {
   orders = [];
   pastOrders = [];
 
+  message: string;
+
   ngOnInit() {
-    console.log(config.transactionBody.fromTransactionDateTimeUtc);
+    // console.log(config.transactionBody.fromTransactionDateTimeUtc);
     setInterval(() =>{
       this.os.getTransactions()
         .subscribe(data => {
@@ -34,12 +38,11 @@ export class QueueComponent implements OnInit, OnDestroy {
           })
           this.tlogIds.forEach(id => {
             this.os.getOrders(id).subscribe(element => {
-              // this.orders.push(order);
               let order = element["tlog"]["items"];
-              let name = element["tlog"]["name"];
+              let name = element["tlog"]["customer"]["name"];
               order.forEach(elem => {
                 elem.customer = name;
-                // console.log(elem);
+                console.log(elem);
                 if (!this.ordersContains(elem.id)) {
                   this.orders.push(elem);
                   this.pastOrders.push(elem.id)
@@ -48,7 +51,7 @@ export class QueueComponent implements OnInit, OnDestroy {
             })
           });
         });
-    }, 1000);
+    }, 2000);
     // this.os.getTransactions()
     //   .subscribe(data => {
     //     data["pageContent"].forEach(element => {
@@ -70,11 +73,6 @@ export class QueueComponent implements OnInit, OnDestroy {
     //       })
     //     });
     //   });
-
-    //apparently this waits until the data is populated??
-    setTimeout(() => {
-      // console.log(this.orders)
-    }, 1500);
   }
 
   @HostListener('document:keyup', ['$event'])
@@ -92,6 +90,16 @@ export class QueueComponent implements OnInit, OnDestroy {
     this.itemsObs$ = this.os.getItems().subscribe((result) => {
       this.items = result;
     });
+  }
+  
+  count = 0;
+  incount(): void{
+    this.data.sendToService();
+    this.count++;
+    if (this.count == 3) {
+      this.dequeue();
+      this.count = 0;
+    }
   }
 
   dequeue(): void {

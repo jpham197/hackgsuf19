@@ -1,12 +1,44 @@
 :host {
 	display: block;
-  }
-  
-  .on-off-container {
+}
+.on-off-container {
 	border: 1px solid #dddddd;
 	margin-top: 1em;
-	padding: 20px 20px 0px 20px;
+	padding: 60px 60px 60px 60px;
 	color: #000000;
 	font-weight: bold;
 	font-size: 20px;
-  }
+}
+
+#on-off-container > div {
+	display: inline-block;
+}
+.on-off-container {
+	height: 500px; 
+	width: 500px; 
+	font-size: 0;
+	display: inline-block;
+	margin: auto;
+	padding: 110px;
+	zoom: 1;
+	vertical-align: top; 
+	font-size: 25px;
+}
+#first {
+	background: url(/assets/300px_first_stage.gif) no-repeat;
+	background-size: cover;
+	animation: giffy 0.5s infinite steps(1);
+    animation-play-state: paused;
+}
+#first:hover {
+	animation-play-state: paused;
+}
+#second {
+	background: url(/assets/300px_second_stage.gif) no-repeat;
+	background-position: center top;
+	/* background-size: cover; */
+}
+#third {
+	background: url(/assets/300px_third_stage.gif) no-repeat;
+	background-size: cover;
+}

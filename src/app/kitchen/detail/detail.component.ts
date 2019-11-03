@@ -15,6 +15,8 @@ export class DetailComponent implements OnInit {
   @Input() item: Item;
   @Input() index: Index;
 
+  arr = ['Size', 'Tea Type', 'Toppings'];
+
   ngOnInit() {
   }
 
