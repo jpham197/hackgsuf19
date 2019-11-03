@@ -16,13 +16,15 @@ import {
       // ...
       state('on', style({
         height: '200px',
+        width: '200px',
         opacity: 1,
-        backgroundColor: 'yellow'
+        backgroundColor: 'white'
       })),
       state('off', style({
         height: '100px',
+        width: '100px',
         opacity: 0.5,
-        backgroundColor: 'green'
+        backgroundColor: 'gray'
       })),
       transition('on => off', [
         animate('1s')
@@ -45,13 +47,14 @@ export class StatusComponent implements OnInit {
   isOn = true;
   index: number = 0;
   prevIndex: number = 0;
-  arr: boolean[] = [false, false, false, false, false];
+  arr: boolean[] = [false, false, false];
 
 
   toggle() {
-    if  (this.index > 5) {
+    if  (this.index > 3) {
       this.index = 0;
     }
+    this.arr = [false, false, false];
     this.arr[this.index] = true;
     this.index++;
   }
