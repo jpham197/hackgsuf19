@@ -1,13 +1,13 @@
-<button (click)="toggle()">Test</button>
+<button (click)="toggle()">Test {{message}}</button>
 
 <div id="container">
   <div [@onOff]="arr[0] ? 'on' : 'off'" class="on-off-container" id="first">
-    You are in the queue.
+    Your order has been received!
   </div>
   <div [@onOff]="arr[1] ? 'on' : 'off'" class="on-off-container" id="second">
-    Making in process...
+    Order in progess...
   </div>
   <div [@onOff]="arr[2] ? 'on' : 'off'" class="on-off-container" id="third">
-    It's coming out shortly!
+    It's coming out soon!
   </div>
 </div>

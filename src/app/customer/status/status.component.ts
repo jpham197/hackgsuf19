@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, Inject, Injectable, HostListener } from '@angular/core';
 
 import {
   trigger,
@@ -7,8 +7,8 @@ import {
   animate,
   transition,
   animation,
-  // ...
 } from '@angular/animations';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-status',
@@ -40,18 +40,24 @@ import {
 })
 export class StatusComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private data: DataService) { }
 
   isOn = true;
   index: number = 0;
   prevIndex: number = 0;
   arr: boolean[] = [false, false, false];
 
+  testIndex: number;
+
+  ngOnInit() {
+    this.data.currentIndex.subscribe(index => {
+      console.log(index);
+      this.testIndex = index;
+    });
+  }
 
   toggle() {
+    console.log("toggling");
     if  (this.index > 3) {
       this.index = 0;
     }

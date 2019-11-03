@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  index = new BehaviorSubject<number>(0);
+  currentIndex = this.index.asObservable();
+  // index = 0;
+  counter = 0;
+
   constructor() { }
 
-  index: number;
-
-  sendToService(index: number): void {
-    this.index = index;
-  }
-
-  pullFromService(): number {
-    return this.index;
+  sendToService(): void {
+    this.index.next(this.counter);
+    // console.log(this.counter);
+    if (this.index.value === 2) {
+      this.counter = 0;
+    } else {
+      this.counter++;
+    }
   }
 
 }
