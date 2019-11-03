@@ -28,3 +28,11 @@
 	background: url(/assets/300px_first_stage.gif) no-repeat;
 	background-size: cover;
 }
+#second {
+	background: url(/assets/300px_second_stage.gif) no-repeat;
+	background-size: cover;
+}
+#third {
+	background: url(/assets/300px_third_stage.gif) no-repeat;
+	background-size: cover;
+}
