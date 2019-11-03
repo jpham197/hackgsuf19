@@ -51,9 +51,25 @@ export class StatusComponent implements OnInit {
 
   ngOnInit() {
     this.data.currentIndex.subscribe(index => {
-      console.log(index);
       this.testIndex = index;
     });
+
+    setInterval(() =>{
+      this.toggle();
+    }, 5000);
+  }
+
+  
+  @HostListener('document:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    console.log(event.key);
+    if (event.key === "Enter") {
+      // this.dequeue();
+      this.toggle();
+    }
+    if (event.key === "q") {
+      // this.orders = [];
+    }
   }
 
   toggle() {

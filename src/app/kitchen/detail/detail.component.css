@@ -1,12 +1,14 @@
 div {
     text-align: center;
+    border: black solid 2px;
+    padding: 1.2em;
 }
 
 h1 {
     height: 0em;
     width: 15em;
     display: block;
-    margin: 1.5em auto;
+    margin: 0em auto;
     font-size: 20px;
     padding: 2em;
     text-align: center;
@@ -14,5 +16,5 @@ h1 {
     background-color: rgba(124, 221, 208, 0.96);
     border-radius: 20px 20px 20px 20px;
     line-height: 0px;
-    
+    margin-top: 0px;
 }
