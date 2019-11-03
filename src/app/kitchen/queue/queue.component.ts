@@ -25,6 +25,7 @@ export class QueueComponent implements OnInit, OnDestroy {
   pastOrders = [];
 
   ngOnInit() {
+    console.log(config.transactionBody.fromTransactionDateTimeUtc);
     setInterval(() =>{
       this.os.getTransactions()
         .subscribe(data => {
@@ -35,7 +36,10 @@ export class QueueComponent implements OnInit, OnDestroy {
             this.os.getOrders(id).subscribe(element => {
               // this.orders.push(order);
               let order = element["tlog"]["items"];
+              let name = element["tlog"]["name"];
               order.forEach(elem => {
+                elem.customer = name;
+                // console.log(elem);
                 if (!this.ordersContains(elem.id)) {
                   this.orders.push(elem);
                   this.pastOrders.push(elem.id)
@@ -45,6 +49,27 @@ export class QueueComponent implements OnInit, OnDestroy {
           });
         });
     }, 1000);
+    // this.os.getTransactions()
+    //   .subscribe(data => {
+    //     data["pageContent"].forEach(element => {
+    //       this.tlogIds.push(element.tlogId);
+    //     })
+    //     this.tlogIds.forEach(id => {
+    //       this.os.getOrders(id).subscribe(element => {
+    //         let order = element["tlog"]["items"];
+    //         let name = element["tlog"]["customer"]["name"];
+    //         console.log(name);
+    //         order.forEach(elem => {
+    //           elem.customer = name;
+    //           console.log(elem);
+    //           if (!this.ordersContains(elem.id)) {
+    //             this.orders.push(elem);
+    //             this.pastOrders.push(elem.id)
+    //           }
+    //         });
+    //       })
+    //     });
+    //   });
 
     //apparently this waits until the data is populated??
     setTimeout(() => {
@@ -55,8 +80,11 @@ export class QueueComponent implements OnInit, OnDestroy {
   @HostListener('document:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     console.log(event.key);
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       this.dequeue();
+    }
+    if (event.key === "q") {
+      this.orders = [];
     }
   }
 

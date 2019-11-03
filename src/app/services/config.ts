@@ -10,7 +10,8 @@ export const config = {
     "transactionBody": {
         "pageSize": 10,
         "fromTransactionDateTimeUtc": {
-            "dateTime": "2019-11-03T00:00:04Z"
+            "dateTime": "2019-11-03T00:00:04Z",
+            // "dateTime": (new Date()).toISOString().substring(0, 19) + "Z"
         }
     },
     "transactionHeaders": {
