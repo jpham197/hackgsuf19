@@ -54,9 +54,9 @@ export class StatusComponent implements OnInit {
       this.testIndex = index;
     });
 
-    setInterval(() =>{
-      this.toggle();
-    }, 5000);
+    // setInterval(() =>{
+    //   this.toggle();
+    // }, 5000);
   }
 
   

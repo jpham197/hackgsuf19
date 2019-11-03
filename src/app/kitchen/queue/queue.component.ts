@@ -42,7 +42,6 @@ export class QueueComponent implements OnInit, OnDestroy {
               let name = element["tlog"]["customer"]["name"];
               order.forEach(elem => {
                 elem.customer = name;
-                console.log(elem);
                 if (!this.ordersContains(elem.id)) {
                   this.orders.push(elem);
                   this.pastOrders.push(elem.id)
@@ -52,34 +51,14 @@ export class QueueComponent implements OnInit, OnDestroy {
           });
         });
     }, 2000);
-    // this.os.getTransactions()
-    //   .subscribe(data => {
-    //     data["pageContent"].forEach(element => {
-    //       this.tlogIds.push(element.tlogId);
-    //     })
-    //     this.tlogIds.forEach(id => {
-    //       this.os.getOrders(id).subscribe(element => {
-    //         let order = element["tlog"]["items"];
-    //         let name = element["tlog"]["customer"]["name"];
-    //         console.log(name);
-    //         order.forEach(elem => {
-    //           elem.customer = name;
-    //           console.log(elem);
-    //           if (!this.ordersContains(elem.id)) {
-    //             this.orders.push(elem);
-    //             this.pastOrders.push(elem.id)
-    //           }
-    //         });
-    //       })
-    //     });
-    //   });
   }
 
   @HostListener('document:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     console.log(event.key);
     if (event.key === "Enter") {
-      this.dequeue();
+      // this.dequeue();
+      this.incount();
     }
     if (event.key === "q") {
       this.orders = [];
