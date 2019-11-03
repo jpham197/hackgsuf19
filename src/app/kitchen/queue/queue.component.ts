@@ -5,6 +5,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 import { MatButtonModule } from "@angular/material";
 import { element } from '@angular/core/src/render3';
 import { config } from '../../services/config'
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-queue',
@@ -14,7 +15,8 @@ import { config } from '../../services/config'
 
 export class QueueComponent implements OnInit, OnDestroy {
 
-  constructor(private os: OrdersService) { }
+  constructor(private os: OrdersService,
+              private data: DataService) { }
 
   itemsObs$;
   items: any = [
@@ -93,10 +95,12 @@ export class QueueComponent implements OnInit, OnDestroy {
       this.items = result;
     });
   }
+  
   count = 0;
   incount(): void{
-    this.count += 1;
-    if (this.count == 4) {
+    this.data.sendToService(this.count);
+    this.count++;
+    if (this.count == 3) {
       this.dequeue();
       this.count = 0;
     }
