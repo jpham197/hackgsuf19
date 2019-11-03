@@ -19,7 +19,7 @@
 	font-size: 0;
 	display: inline-block;
 	margin: auto;
-	padding: 80px;
+	padding: 110px;
 	zoom: 1;
 	vertical-align: top; 
 	font-size: 25px;
@@ -29,7 +29,7 @@
 	background-size: cover;
 }
 #second {
-	background: url(/assets/300px_second_stage.gif) no-repeat;
+	background: url(/assets/cropped2_100px_second_stage.gif) no-repeat;
 	background-size: cover;
 }
 #third {
