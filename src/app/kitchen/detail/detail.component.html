@@ -1,3 +1,12 @@
-<h1 *ngIf="index == 0">{{item.name}} Details</h1>
+<!-- <h1 *ngIf="index == 0">{{item.name}}'s Details</h1> -->
 
-
+<div *ngIf="index == 0">
+    <!-- Order -->
+        <h2>{{item.customer}}'s Order:</h2>
+        {{item.productName}}
+        <!-- Variations -->
+        <br>
+        <span *ngFor="let variation of item.variations">
+            {{variation.name}}<br>
+        </span>
+</div>
