@@ -28,7 +28,7 @@
 	background: url(/assets/300px_first_stage.gif) no-repeat;
 	background-size: cover;
 	animation: giffy 0.5s infinite steps(1);
-    animation-play-state: paused;
+	animation-play-state: paused;
 }
 #first:hover {
 	animation-play-state: paused;

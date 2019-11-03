@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
 
 import {
   trigger,
@@ -44,6 +44,13 @@ export class StatusComponent implements OnInit {
 
   ngOnInit() {
   }
+  // @HostListener('click', ['$event'])
+  // keyEvent(event: KeyboardEvent) {
+  //   console.log(event.key);
+  //   if (event.key == "click") {
+  //     this.toggle()
+  //   }
+  // }
 
   isOn = true;
   index: number = 0;

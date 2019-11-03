@@ -16,7 +16,6 @@ export class DetailComponent implements OnInit {
   @Input() index: Index;
 
   ngOnInit() {
-    console.log(this.index);
   }
 
 }
