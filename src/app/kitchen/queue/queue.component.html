@@ -1,7 +1,7 @@
 <body>
     <div class="grid">
         <div id="orders">
-            <button mat-button (click)="dequeue()">Next Order</button>    
+            <button mat-button (click)="incount()">Next Order</button>    
             <app-order *ngFor="let item of orders" [item]="item"></app-order>
         </div>
         <div><app-detail *ngFor="let item of orders; let i = index"

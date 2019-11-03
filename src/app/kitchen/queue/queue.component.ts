@@ -48,7 +48,7 @@ export class QueueComponent implements OnInit, OnDestroy {
             })
           });
         });
-    }, 1000);
+    }, 7000);
     // this.os.getTransactions()
     //   .subscribe(data => {
     //     data["pageContent"].forEach(element => {
