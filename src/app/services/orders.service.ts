@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { config } from "./config";
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,7 @@ export class OrdersService {
   //Mock API call
   getItems() {
     return this.http.get(config.getItemsUrl);
+  
   }
 
   //Get transaction ID
