@@ -2,10 +2,20 @@
     <div class="grid">
         <div id="orders">
             <button mat-button (click)="dequeue()">Next Order</button>    
-            <app-order *ngFor="let item of items" [item]="item"></app-order>
+            <app-order *ngFor="let item of orders" [item]="item"></app-order>
         </div>
-        <div><app-detail *ngFor="let item of items; let i = index"
+        <div><app-detail *ngFor="let item of orders; let i = index"
                         [item]="item"
                         [index]="i"></app-detail></div>
     </div>
 </body>
+
+<!-- <div *ngFor="let order of orders" class="order">
+    <p *ngFor="let innerOrder of order">
+        {{innerOrder.productName}}
+        <br>
+        <span *ngFor="let variation of innerOrder.variations">
+            {{variation.name}},
+        </span>
+    </p>
+</div> -->

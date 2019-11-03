@@ -3,5 +3,9 @@ div {
     margin-top: 1px;
     width: 12em;
     padding: 2em;
-    /* display: flex; */
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
 }
