@@ -6,6 +6,7 @@ import {
   style,
   animate,
   transition,
+  animation,
   // ...
 } from '@angular/animations';
 
