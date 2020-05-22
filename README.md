@@ -1,27 +1,39 @@
-# Hackgsuf19
+# Boba Buddies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+Boba Buddies is an Angular project built during HackGSU Fall 2019. The aim of the project was to create a new PoS system for restaurants. This new system would allow customers to see their order progress in stages, similar to a pizza tracker.
 
-## Development server
+## Technologies 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The core of the app was based on the NCR Silver API. We created orders from a tablet loaded with an app that connected to the NCR API. Orders were sent to the API and then received via our Boba Buddies app.
 
-## Code scaffolding
+The Boba Buddies app took advantage of Angular routing and had two routes: kitchen and customer. Each route acted as a screen for the two parties that would interact with the app through a GUI. Orders received from the physical tablet were sent to the kitchen screen where the cooks could click "next" which would move the order to the next stage. The customer screen would reflect the changes every time the cook clicks "next."
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prizes
 
-## Build
+Boba Buddies won the category of [Best Use of Angular.](https://devpost.com/software/boba-buddies)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Each member was also awarded an internship with NCR for the summer of 2020.
 
-## Running unit tests
+## Team Members
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[Jimmy Pham](https://github.com/jpham197)<br>
+[Samuel Chen](https://github.com/WoShiSam)<br>
+[Catherine Lee](https://github.com/itscatherinelee)<br>
+[Hang Qiu](https://github.com/924920329)<br>
 
-## Running end-to-end tests
+## Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Kitchen Screen
 
-## Further help
+![Kitchen Screen](/Screenshots/Kitchen_0.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Customer Screen
+![Customer_0](/Screenshots/Customer_0.png)
+![Customer_1](/Screenshots/Customer_1.png)
+![Customer_2](/Screenshots/Customer_2.png)
+![Customer_3](/Screenshots/Customer_3.png)
+
+Icons and images created by:
+[]()<br>
+[]()<br>
+[]()<br>
