@@ -34,6 +34,6 @@ Customer Screen
 ![Customer_3](/Screenshots/Customer_3.png)
 
 Icons and images created by:
-[]()<br>
+[Michelle Kim](https://www.instagram.com/bluejayflew)<br>
 []()<br>
 []()<br>
