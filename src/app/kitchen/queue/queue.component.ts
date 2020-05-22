@@ -18,6 +18,16 @@ export class QueueComponent implements OnInit, OnDestroy {
   constructor(private os: OrdersService,
               private data: DataService) { }
 
+  test: any = {
+    customer: "Bob",
+    productName: "Thai Tea",
+    variations: [
+      {
+        name: "Large"
+      }
+    ]
+  }
+
   itemsObs$;
   items: any = [
   ]
@@ -30,28 +40,30 @@ export class QueueComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // console.log(config.transactionBody.fromTransactionDateTimeUtc);
-    setInterval(() =>{
-      this.os.getTransactions()
-        .subscribe(data => {
-          data["pageContent"].forEach(element => {
-            this.tlogIds.push(element.tlogId);
-          })
-          this.tlogIds.forEach(id => {
-            this.os.getOrders(id).subscribe(element => {
-              let order = element["tlog"]["items"];
-              let name = element["tlog"]["customer"]["name"];
-              order.forEach(elem => {
-                elem.customer = name;
-                console.log(elem);
-                if (!this.ordersContains(elem.id)) {
-                  this.orders.push(elem);
-                  this.pastOrders.push(elem.id)
-                }
-              });
-            })
-          });
-        });
-    }, 2000);
+
+    // setInterval(() =>{
+    //   this.os.getTransactions()
+    //     .subscribe(data => {
+    //       data["pageContent"].forEach(element => {
+    //         this.tlogIds.push(element.tlogId);
+    //       })
+    //       this.tlogIds.forEach(id => {
+    //         this.os.getOrders(id).subscribe(element => {
+    //           let order = element["tlog"]["items"];
+    //           let name = element["tlog"]["customer"]["name"];
+    //           order.forEach(elem => {
+    //             elem.customer = name;
+    //             console.log(elem);
+    //             if (!this.ordersContains(elem.id)) {
+    //               this.orders.push(elem);
+    //               this.pastOrders.push(elem.id)
+    //             }
+    //           });
+    //         })
+    //       });
+    //     });
+    // }, 2000);
+
     // this.os.getTransactions()
     //   .subscribe(data => {
     //     data["pageContent"].forEach(element => {
